@@ -27,7 +27,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder{
-        TextView dateTv, cityTv, tempTv, descTv, windTv, humidityTv, pressureTv;
+        TextView dateTv, cityTv, tempTv, descTv, windTv, humidityTv, pressureTv, visibilityTv;
 
         EditText locationEt;
         ImageView imageView;
@@ -43,6 +43,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             pressureTv = itemView.findViewById(R.id.pressureTv);
             imageView = itemView.findViewById(R.id.imageView);
             locationEt = itemView.findViewById(R.id.locationEt);
+            visibilityTv = itemView.findViewById(R.id.visibilityTv);
         }
     }
 

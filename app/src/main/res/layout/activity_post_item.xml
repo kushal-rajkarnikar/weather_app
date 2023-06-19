@@ -5,7 +5,10 @@
     android:layout_width="wrap_content"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:layout_margin="10dp"
+    android:background="@color/secondary_color"
+    android:layout_margin="12dp"
+    android:paddingHorizontal="24dp"
+    android:paddingVertical="12dp"
     tools:context=".recycler_view">
 
     <TextView
@@ -13,6 +16,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Time"
+        android:textColor="@color/secondary_text_color"
         android:layout_gravity="center"
         />
 
@@ -29,6 +33,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="Temperature"
+        android:textColor="@color/secondary_text_color"
         />
 
 

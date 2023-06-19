@@ -43,6 +43,8 @@ public class recycler_view extends AppCompatActivity {
 
     private ImageView imageView;
 
+    private TextView visibilityTv;
+
 
 
     @Override
@@ -58,6 +60,7 @@ public class recycler_view extends AppCompatActivity {
         humidityTv = findViewById(R.id.humidityTv);
         pressureTv = findViewById(R.id.pressureTv);
         imageView = findViewById(R.id.imageView);
+        visibilityTv = findViewById(R.id.visibilityTv);
 
         // ktm ko
         String kathmanduWeatherApiUrl = "https://api.openweathermap.org/data/2.5/weather?q=Kathmandu&appid=39689a6306ea2b90753a54149f60f803";
@@ -235,15 +238,18 @@ public class recycler_view extends AppCompatActivity {
             String temp = String.format("%.2f", temperatureInCelsius) + " °C";
 
             String description = weatherObject.getString("description");
-            String speed = jsonObject.getJSONObject("wind").getString("speed") + " m/s";
+            String speed = jsonObject.getJSONObject("wind").getString("speed") + "m/s";
             String humidity = mainObject.getString("humidity") + "%";
-            String pressure = mainObject.getString("pressure") + " mb";
+            String visibility = jsonObject.getString("visibility") + "m";
+            String pressure = mainObject.getString("pressure") + "mb";
 
             cityTv.setText(city);
             dateTv.setText(formattedDate);
             tempTv.setText(temp);
+            description = description.substring(0, 1).toUpperCase() + description.substring(1);
             descTv.setText(description);
             windTv.setText(speed);
+            visibilityTv.setText(visibility);
             humidityTv.setText(humidity);
             pressureTv.setText(pressure);
             Picasso.get().load(imageUrl).into(imageView);
